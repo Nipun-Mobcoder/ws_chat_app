@@ -20,10 +20,9 @@ const Form = ({
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(data)
         if(!isSignInPage){
           try {
-            const data = await axios.post('http://localhost:4000/register', { email: data.email, password: data.password, fullName: data.fullName })
+            await axios.post('http://localhost:4000/register', { email: data.email, password: data.password, fullName: data.fullName })
             navigate('/sign_in');
           }
           catch (e) {
